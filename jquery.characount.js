@@ -2,16 +2,15 @@
     "use strict";
 
     function countCharactersLeft() {
+        var $input = $(this);
         var counting = setTimeout(function() {
             if (counting) clearTimeout(counting);
-
-            var $input = $(this);
             var charCountLabelTarget = $input.data('characount-label-target');
             var limit = parseInt( $input.attr('maxlength') );
             var charCount = $input.val().length;
 
             $(charCountLabelTarget).text(limit-charCount);
-        }.bind(this), 25);
+        }, 25);
     }
 
     $.fn.characount = function characount() {
